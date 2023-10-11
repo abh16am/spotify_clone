@@ -6,30 +6,26 @@ let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
-let songItems = Array.from(document.getElementsByClassName('songItem')); // Correct variable name
-let song = [
-    { songName: "Warriyo - Mortals (feat. Laura Brehm) | NCS - Copyright Free Music  NoCopyrightSounds ", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
+let songItems = Array.from(document.getElementsByClassName('songItem'));
+
+let songs = [
+    { songName: "Warriyo - Mortals  ", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
     { songName: "Cielo - Huma-Huma", filePath: "songs/2.mp3", coverPath: "covers/2.jpg" },
-    { songName: "DEAF KEV - Invincible | NCS - Copyright Free Music", filePath: "songs/3.mp3", coverPath: "covers/3.jpg" },
-    { songName: "Different Heaven & EH!DE - My Heart | NCS - Copyright Free Music", filePath: "songs/4.mp3", coverPath: "covers/4.jpg" },
-    { songName: "Janji - Heroes Tonight (feat. Johnning) | NCS - Copyright Free Music", filePath: "songs/5.mp3", coverPath: "covers/5.jpg" },
+    { songName: "DEAF KEV - Invincible", filePath: "songs/3.mp3", coverPath: "covers/3.jpg" },
+    { songName: "Different Heaven & EH!DE - My Heart ", filePath: "songs/4.mp3", coverPath: "covers/4.jpg" },
+    { songName: "Janji - Heroes Tonight ", filePath: "songs/5.mp3", coverPath: "covers/5.jpg" },
     { songName: "salam-e-ishq", filePath: "songs/6.mp3", coverPath: "covers/6.jpg" },
-    // Add more songs here
+   
 ];
 
-// Update the song item images and names
-songItems.forEach((element, i) => {
-    // Get the relevant song object from the 'song' array
-    const currentSong = song[i];
 
-    // Find the image and span elements within the song item
-    const imgElement = element.querySelector('img');
-    const songNameElement = element.querySelector('.songName');
+// Rest of your code using the 'song' array
 
-    // Update the image source and song name
-    imgElement.src = currentSong.coverPath;
-    songNameElement.textContent = currentSong.songName;
-});
+songItems.forEach((element,i)=>{
+    console.log(element,i);
+    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+})
 
 // Handle play/pause click
 masterPlay.addEventListener('click', () => {

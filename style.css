@@ -47,10 +47,10 @@ nav ul li{
     margin: 20px auto;
     width: 70%;
     border-radius: 12px;
-    padding: 35px;
+    padding: 110px;
     background-image: url('bg.jpg');
-    background-size: cover; /* Make the background image cover the container */
-    background-position: center center; /* Center the background image horizontally and vertically */
+    background-size: cover; 
+    background-position: center center;
 }
 
 
